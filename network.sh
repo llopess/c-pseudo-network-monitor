@@ -1,4 +1,4 @@
-LOG=/Users/leonardo.lopes/Documents/$(date +%s)-network-monitor.log
+LOG=$(pwd)/$(date +%s)-network-monitor.log
 
 echo "Script desenvolvido por Leonardo Lopes"
 

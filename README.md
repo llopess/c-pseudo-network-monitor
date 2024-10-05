@@ -1,3 +1,5 @@
+DISCLAIMER: THIS CODE DOES NOT IMPLEMENT A NETWORK MONITOR, IT IS USED FOR ACADEMIC PURPOSES
+
 # Monitor de redes
 
 - Executou-se o script `network.sh` da seguinte forma

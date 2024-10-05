@@ -1,10 +1,17 @@
 #include <stdio.h>
-#include <unistd.h>
+#include <unistd.h> // biblioteca necessária para utilizar a função sleep
 
+// Adiciona uma série de caracteres a uma string com o objetivo de 
+// criar um separador visível durante a execução do código e apresenta em tela
 void printSeparador(char data[]) {
 	printf("=====%s=====\n\n", data);
 }
 
+/* Com base nos dois parâmetros passados, verifica se um novo
+   tempo de execução é menor do que o menor tempo já registrado
+
+   retorna o menor tempo
+*/
 float verificaMenorTempo(float menorTempo, float tempoDeExecucao) {
 	if (menorTempo < tempoDeExecucao) {
 		return menorTempo;
@@ -13,6 +20,12 @@ float verificaMenorTempo(float menorTempo, float tempoDeExecucao) {
 	}
 }
 
+
+/* Com base nos dois parâmetros passados, verifica se um novo
+   tempo de execução é maior do que o maior tempo já registrado
+
+   retorna o maior tempo
+*/
 float verificaMaiorTempo(float maiorTempo, float tempoDeExecucao) {
 	if (maiorTempo > tempoDeExecucao) {
 		return maiorTempo;
@@ -21,6 +34,7 @@ float verificaMaiorTempo(float maiorTempo, float tempoDeExecucao) {
 	}
 }
 
+// Apresenta em tela dados do comando ipconfig
 void printIpconfig() {
     char ipv4[] = "192.168.2.120";
     char ipv6[] = "2804:60:367:9c00:e6cb:b67:47aa:9526";
@@ -32,7 +46,10 @@ void printIpconfig() {
     printSeparador("");
 }
 
+// Apresenta em tela dados do comando ping
 void printPing() {
+	// Cria um array de 3 posições, onde cada posição comporta 62 caracteres
+	// para salvar os dados do comando ping
 	char dadosColetados[3][62] = {
 		"64 bytes from 172.217.29.46: icmp_seq=0 ttl=51 time=27.156 ms",
 		"64 bytes from 172.217.29.46: icmp_seq=1 ttl=51 time=27.259 ms",
@@ -86,6 +103,7 @@ void printPing() {
 	printSeparador("");
 }
 
+// Apresenta em tela dados do comando tracert
 void printTracert() {
     char tracertInfo[13][55] = {
         "*    	*    	* 	Esgotado o tempo limite do pedido.",
@@ -111,6 +129,7 @@ void printTracert() {
     }
 }
 
+// Chama três funções para apresentar dados de rede
 int main() {
 	printSeparador("Monitor de redes do Leonardo");
 	
